@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+  {% block my_block %}
+  <!-- about us-->
+  <div class="container">
+   <div class="about-details">
+       <h1 class="about-header">About</h1>
+       <p class="about-body">
+         Jahangirnagar University Debate Organization, popularly recognized as JUDO, is the central debate entity of Jahangirnagar University. It was established on December 23, 2005. It has been operating its activities with great accomplishments and excellence of its dedicated members since then. More than 150 running students are currently working with JUDO. JUDO regulates the debate workouts of the departments and halls of Jahangirnagar University having 12 officially affiliated debating clubs.
+         JUDO organizes National Debate Festival every year with three mandatory segments of inter-school, inter-college and inter-university parliamentary debate competition with the participation of approximately 300 debaters which is said to be one of the biggest debate events in Bangladesh. Alongside, JUDO organizes national Barwary debate competitions, national public speaking competitions, so many thematic debate events & various internal debate events like - Inter-department debate competition, Inter-hall debate competition, Freshers' reception with debate workshop, Freshers' debate competition etc.
+
+         JUDO acknowledges in nourishing new debaters with the utmost care. It also focuses on impacting socio-cultural outcomes directly through debating.
+
+         With the visionary dream and the great dedication of the members, JUDO has become one of the prominent debate organizations in Bangladesh. Its bunch of achievements and numerous contributions to the debate movement of the country made it the most thriving debate entity of the territory.
+       </p>
+   </div>
+  </div>
+  <hr>
+  <!-- content -->
+  <section class="text-gray-700 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      {% if content %}
+      {% for cnt in content %}
+        {% if forloop.counter <= 1 %}
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{ cnt.Title }}</h1>
+            <p class="mb-8 leading-relaxed">{{ cnt.Description }}</p>
+          </div>
+          {% if cnt.content_image %}
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded" alt="hero" src=" {{ cnt.content_image.url }} ">
+          </div>
+          {% else %}
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+              <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/720x600/?debating,club">
+            </div>
+          {% endif %}
+
+        {% endif %}
+      {% endfor %}
+      {% else %}
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
+          <br class="hidden lg:inline-block">readymade gluten
+        </h1>
+        <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+        <div class="flex justify-center about-button"">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">About Us</button>
+        </div>
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/720x600/?debating,club">
+      </div>
+      {% endif %}
+    </div>
+  </section>
+       <hr>
+       <!--progress bar-->
+       <section class="text-gray-700 body-font">
+         <div class="container px-5 py-24 mx-auto">
+           <div class="flex flex-wrap -m-4 text-center">
+             {% for prog in progressbar %}
+               {% if forloop.counter <= 1 %}
+                 <div class="p-4 sm:w-1/4 w-1/2">
+                   <svg class="h-10 w-20 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                   <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{ prog.First }}</h2>
+                   <p class="leading-relaxed">{{ prog.First_description }}</p>
+                 </div>
+                 <div class="p-4 sm:w-1/4 w-1/2">
+                   <svg class="h-10 w-20 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                   <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{ prog.Second }}</h2>
+                   <p class="leading-relaxed">{{ prog.Second_description }}</p>
+                 </div>
+                 <div class="p-4 sm:w-1/4 w-1/2">
+                   <svg class="h-10 w-20 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                   <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{ prog.Third }}</h2>
+                   <p class="leading-relaxed">{{ prog.Third_description }}</p>
+                 </div>
+                 <div class="p-4 sm:w-1/4 w-1/2">
+                   <svg class="h-10 w-20 inline-block" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                   <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{ prog.Fourth }}</h2>
+                   <p class="leading-relaxed">{{ prog.Fourth_description }}</p>
+                 </div>
+               {% endif %}
+             {% endfor %}
+           </div>
+         </div>
+       </section>
+       <hr>
+       <!--team-->
+
+       <section class="text-gray-700 body-font">
+         <div class="container px-5 py-24 mx-auto">
+           <div class="flex flex-col text-center w-full mb-20">
+             <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
+             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+           </div>
+           <div class="flex flex-wrap -m-4">
+
+       {% for team in ourteam %}
+         {% if forloop.counter <= 6 %}
+             <div class="p-4 lg:w-1/2">
+               <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                 <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{{ team.Photo_1.url }}">
+                 <div class="flex-grow sm:pl-8">
+                   <h2 class="title-font font-medium text-lg text-gray-900">{{ team.Name1 }}</h2>
+                   <h3 class="text-gray-500 mb-3">{{ team.Designation1 }}</h3>
+                   <p class="mb-4">{{ team.Details1 }}</p>
+                   <span class="inline-flex">
+                     <a class="text-gray-500">
+                       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                       </svg>
+                     </a>
+                     <a class="ml-2 text-gray-500">
+                       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                       </svg>
+                     </a>
+                     <a class="ml-2 text-gray-500">
+                       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                       </svg>
+                     </a>
+                   </span>
+                 </div>
+               </div>
+             </div>
+             <div class="p-4 lg:w-1/2">
+               <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                 <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{{ team.Photo_2.url }}">
+                 <div class="flex-grow sm:pl-8">
+                   <h2 class="title-font font-medium text-lg text-gray-900">{{ team.Name2 }}</h2>
+                   <h3 class="text-gray-500 mb-3">{{ team.Designation2 }}</h3>
+                   <p class="mb-4">{{ team.Details2 }}</p>
+                   <span class="inline-flex">
+                     <a class="text-gray-500">
+                       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                       </svg>
+                     </a>
+                     <a class="ml-2 text-gray-500">
+                       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                       </svg>
+                     </a>
+                     <a class="ml-2 text-gray-500">
+                       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                       </svg>
+                     </a>
+                   </span>
+                 </div>
+               </div>
+             </div>
+       {% endif %}
+       {% endfor %}
+           </div>
+         </div>
+       </section>
+  {% endblock %}

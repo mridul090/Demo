@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block my_block %}
+
+  <div class='container parent'>
+    <div class='jumbotron'>
+      <div class='article_details parent'>
+        <div class='details '>
+          {% if article.thumb %}
+              <img src="{{ article.thumb.url }}" alt="" class="img-fluid">
+              <h1>{{ article.title }}</h1>
+              <p>{{ article.body }}</p>
+              <p>{{ article.date }}</p>
+          {% else %}
+              <h1>{{ article.title }}</h1>
+              <p>{{ article.body }}</p>
+              <p>{{ article.date }}</p>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Comments Form -->
+  <div class="card my-4">
+    <h5 class="card-header">Leave a Comment:</h5>
+    <div class="card-body">
+      <form method="POST" action="{% url 'articles:details' id=article.id %}" />
+        {% csrf_token %}
+        {% if user.is_authenticated %}
+         <input type="hidden" name="user_name" value="{{ article.author.username }}">
+         {% else %}
+         <input type="hidden" name="user_name" value="Unknown">
+         {% endif %}
+        <div class="form-group">
+          <textarea class="form-control" rows="3" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Single Comment -->
+  {% for com in comment %}
+  <div class="media mb-4">
+    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+    <div class="media-body">
+      <h5 class="mt-0">{{ com.user_name }}</h5>
+      <p>{{ com.message }}</p>
+      <code>{{ com.date_comment }}</code>
+    </div>
+  </div>
+  {% endfor %}
+ {% endblock %}

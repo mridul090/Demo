@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block my_block %}
+<div class="container">
+    <div class="row list_items">
+      {% if articles %}
+       {% for article in articles %}
+      <div class="col-lg-3 col-sm-6 listing">
+        <h3><a href="{% url 'articles:details' id=article.id %}"><sapn class="title">{{ article.title }}</span></a></h3>
+        <p>{{ article.snippet }}</p>
+        <p>{{ article.date }}</p>
+        <p class='author'>Add by {{ article.author.username }}
+      </div>
+    {% endfor %}
+   {% else %}
+      <h3>No aticles availabe to show</h3>
+   {% endif %}
+    </div>
+</div>
+
+{% endblock %}

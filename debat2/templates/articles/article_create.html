@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block my_block %}
+<div class="container">
+     <div class='create-article parent'>
+       <div class="wrapper">
+          <h2>create new article</h2>
+          <form class="site-form" action="{% url 'articles:create' %}" method="post" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' value="Create">
+          </form>
+        </div>
+     </div>
+</div>
+<script type="text/javascript" src="/static/css/slugify.js"></script>
+{% endblock %}

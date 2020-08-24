@@ -1,0 +1,174 @@
+body{
+    background-color: #F6F6F6;
+}
+.topbar{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+
+}
+.social a {
+    margin-right: 0.4rem; }
+
+.navb{
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+}
+.nav_logo{
+    padding-top: 10px !important;
+}
+.navbar_btn{
+    color: darkslategray !important;
+    padding-top: 0rem !important;
+
+}
+.navbar_color{
+    background-color: #8A2BE2!important;
+    text-decoration: none;
+    color: cornsilk;
+}
+.footer_color{
+        background-color: #8A2BE2 !important;
+        text-decoration: none;
+        color: cornsilk;
+}
+.progress .font-size{
+    font-size: medium;
+}
+.menu_item a{
+  text-decoration: none;
+  color: cornsilk;
+}
+
+.about-button button{
+  background-color:#8A2BE2;
+  color: cornsilk;
+  font-size:1.25em;
+  margin-left: 20px;
+}
+
+
+
+.article{
+  text-align: center;
+  padding: 10px;
+  margin:10px;
+  border: 1px solid #8A2BE2;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.article:hover,.title:hover{
+  background-color: #8A2BE2;
+  color:#fff;
+}
+.article p{
+  text-decoration:none;
+  font-size:1en
+}
+
+.title{
+  text-decoration:none;
+  font-size:1.2em;
+}
+
+.article .author{
+  padding:10px;
+  background: #8A2BE2;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  color: #fff;
+}
+
+.parent{
+  display:flex;
+  justify-content:center;
+}
+
+.article_details .details {
+  padding:0;
+}
+
+.article_details .details  img{
+  max-width: 100%;
+}
+
+.article_details .details  h1{
+  text-align:center;
+  margin: auto;
+  font-size: 2em;
+}
+
+.article_details .details  p{
+  text-align:center;
+}
+.wrapper{
+  margin: 50px auto;
+  width:auto;
+  border: 2px solid  #8A2BE2;
+  padding:30px 50px;
+
+}
+
+.wrapper input[type="submit"]{
+  background: #8A2BE2;
+  border: 2px solid #8A2BE2;
+  color: #fff;
+  font-size:1em;
+  border-radius: 5px;
+  margin:10px 0;
+  padding: 5px 10px;
+  text-align:center;
+
+}
+
+
+.site-form input,.site-form textarea{
+  display:block;
+  margin:20px 0 0 0;
+  padding: 10px;
+  border:1px solid #8A2BE2;
+}
+.about-details{
+  margin:40px;
+  padding:40px;
+}
+
+.about-details h1,.about-details p{
+  text-align:center;
+  padding: 20px;
+}
+
+.list_items{
+  margin:50px 0px;
+  position:relative;
+}
+
+.listing{
+  text-align:center;
+  text-decoration:none;
+}
+
+.article_listing{
+  position:relative;
+}
+
+.all_list{
+  padding:10px 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  text-decoration:none;
+  color:#8A2BE2;
+  font-size:1.2em;
+}
+.nav_logo{
+  margin-left:30px;
+  width:80px;
+}
+.about-body{
+  font-size:1.3em;
+}

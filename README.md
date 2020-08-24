@@ -1,0 +1,1 @@
+This is Django project for JUDO Bebating Organization
